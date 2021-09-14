@@ -3,6 +3,7 @@
 Student:	    Jason Staley
 Date: 		    9/9/2021
 Assignment: 	2.2 - Controller Aspects and Navigation
+Updated:        9/14/2021 - 3.2 - Thymeleaf in Action - display a list of books
 File Name: 	    index.html
 
 University:	    Bellevue University
@@ -10,7 +11,7 @@ Class:		    CIS530-T301 Server-Side Development (2221-1)
 Professor: 	    Richard Lomax
 
 Citations:
-Lomax, R. (2021). CIS 530 Server-Side Development. Bellevue University.
+Lomax, R., Krasso, R. (2021). CIS 530 Server-Side Development. Bellevue University.
 Modified by J. Staley 2021
 -->
 <html xmlns:th="http://www.thymeleaf.org">
@@ -39,6 +40,34 @@ Modified by J. Staley 2021
       </div>
     </div>
   </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" th:each="book : ${books}">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text">
+                <span th:text="${book.getTitle()}"></span>
+                <br />
+                <small class="text-muted"><em th:text="${book.getDescription()}"></em></small>
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <ul th:each="author : ${book.getAuthors()}" style="list-style-type: none;">
+                  <li>
+                    <small class="text-muted" th:text="${author}"></small>
+                  </li>
+                </ul>
+                <div class="btn-group">
+                  <a href="#" th:href="@{/{id}(id=${book.getIsbn()})}" class="btn btn-sm btn-outline-secondary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <div th:insert="~{fragments/footer :: footer}"></div>
