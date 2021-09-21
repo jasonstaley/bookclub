@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Student:	    Jason Staley
+Date: 		    9/21/2021
+Assignment: 	4.2 - Forms and Data Validation
+File Name: 	    pom.xml
+
+University:	    Bellevue University
+Class:		    CIS530-T301 Server-Side Development (2221-1)
+Professor: 	    Richard Lomax
+
+Citations:
+Lomax, R., Krasso, R. (2021). CIS 530 Server-Side Development. Bellevue University.
+Modified by J. Staley 2021
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -17,6 +31,11 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+        <!-- Form validation fields -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

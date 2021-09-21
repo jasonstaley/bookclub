@@ -3,6 +3,7 @@
 Student:	    Jason Staley
 Date: 		    9/9/2021
 Assignment: 	2.2 - Controller Aspects and Navigation
+Updated:        9/21/2021 - 4.2 - Forms and Data Validation - include a route for "Wishlist"
 File Name: 	    header.html
 
 University:	    Bellevue University
@@ -10,7 +11,7 @@ Class:		    CIS530-T301 Server-Side Development (2221-1)
 Professor: 	    Richard Lomax
 
 Citations:
-Lomax, R. (2021). CIS 530 Server-Side Development. Bellevue University.
+Lomax, R., Krasso, R. (2021). CIS 530 Server-Side Development. Bellevue University.
 Modified by J. Staley 2021
 -->
 <html xmlns:th="http://www.thymeleaf.org">
@@ -34,6 +35,9 @@ Modified by J. Staley 2021
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact" th:href="@{/contact}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/wishlist" th:href="@{/wishlist}" class="nav-link">Wishlist</a>
                     </li>
                 </ul>
             </div>
