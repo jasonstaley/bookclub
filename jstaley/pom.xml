@@ -3,6 +3,7 @@
 Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
+Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - adding MongoDB Driver
 File Name: 	    pom.xml
 
 University:	    Bellevue University
@@ -26,7 +27,7 @@ Modified by J. Staley 2021
     <artifactId>jstaley</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jstaley</name>
-    <description>jstaley</description>
+    <description>Bookclub project for CIS 530</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -44,7 +45,19 @@ Modified by J. Staley 2021
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- MongoDB Driver -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
 
+        <!-- Spring devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

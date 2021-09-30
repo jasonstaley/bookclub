@@ -2,6 +2,9 @@
 Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
+Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - a new private property for id of type String with a decorator of @Id
+                -Add getter method for the new id property
+                -Update the overridden toString() method to include the id property
 File Name: 	    WishlistItem.java
 
 University:	    Bellevue University
@@ -16,8 +19,14 @@ package com.bookclub.model;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class WishlistItem {
+@Document(collection = "wishlist")
+public class WishlistItem
+{
+    @Id
+    private String id;
 
     @NotNull
     @NotEmpty(message = "ISBN is a required field.")
@@ -32,6 +41,10 @@ public class WishlistItem {
     public WishlistItem(String isbn, String title) {
         this.isbn = isbn;
         this.title = title;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setIsbn(String isbn) {
@@ -52,6 +65,6 @@ public class WishlistItem {
 
     @Override
     public String toString() {
-        return String.format("WishlistItem{isbn=%s, title=%s}", isbn, title);
+        return String.format("WishlistItem{id=%s, isbn=%s, title=%s}", id, isbn, title);
     }
 }

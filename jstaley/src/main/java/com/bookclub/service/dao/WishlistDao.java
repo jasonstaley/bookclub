@@ -2,6 +2,7 @@
 Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
+Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - extend the GenericCrudDao instead of the GenericDao interface
 File Name: 	    WishlistDao.java
 
 University:	    Bellevue University
@@ -16,7 +17,8 @@ Modified by J. Staley 2021
 package com.bookclub.service.dao;
 
 import com.bookclub.model.WishlistItem;
+import com.bookclub.service.GenericCrudDao;
 import com.bookclub.service.GenericDao;
 
-public interface WishlistDao extends GenericDao<WishlistItem, String> {
+public interface WishlistDao extends GenericCrudDao<WishlistItem, String> {
 }
