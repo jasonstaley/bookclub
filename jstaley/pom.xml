@@ -4,6 +4,7 @@ Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
 Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - adding MongoDB Driver
+                10/6/2021 - Assignment 6.2 – Access Management - Spring and Thymeleaf security
 File Name: 	    pom.xml
 
 University:	    Bellevue University
@@ -49,6 +50,18 @@ Modified by J. Staley 2021
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Thymeleaf security -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
 
         <!-- Spring devtools -->

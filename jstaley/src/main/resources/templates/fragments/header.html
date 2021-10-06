@@ -4,6 +4,7 @@ Student:	    Jason Staley
 Date: 		    9/9/2021
 Assignment: 	2.2 - Controller Aspects and Navigation
 Updated:        9/21/2021 - 4.2 - Forms and Data Validation - include a route for "Wishlist"
+                10/6/2021 - Assignment 6.2 – Access Management
 File Name: 	    header.html
 
 University:	    Bellevue University
@@ -38,6 +39,18 @@ Modified by J. Staley 2021
                     </li>
                     <li class="nav-item">
                         <a href="/wishlist" th:href="@{/wishlist}" class="nav-link">Wishlist</a>
+                    </li>
+                </ul>
+
+                <div class="nav navbar-nav ml-auto w-100 justify-content-center">
+                    <div sec:authorize="isAuthenticated()">
+                        Logged in as <strong sec:authentication="name"></strong>
+                    </div>
+                </div>
+
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item float-end">
+                        <a href="/logout" th:href="@{/logout}" class="nav-link float-end">Logout</a>
                     </li>
                 </ul>
             </div>
