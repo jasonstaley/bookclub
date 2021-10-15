@@ -3,6 +3,7 @@ Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
 Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB
+                10/15/2021 - Assignment 7.2 – RESTful Controllers - Update the showWishlist method
 File Name: 	    WishlistController.java
 
 University:	    Bellevue University
@@ -41,11 +42,7 @@ public class WishlistController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showWishlist(Model model) {
-        List<WishlistItem> wishlist = wishlistDao.list();
-
-        model.addAttribute("wishlist", wishlist);
-
+    public String showWishlist() {
         return "wishlist/list";
     }
 
