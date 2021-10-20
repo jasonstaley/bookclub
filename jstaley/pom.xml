@@ -6,6 +6,7 @@ Assignment: 	4.2 - Forms and Data Validation
 Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - adding MongoDB Driver
                 10/6/2021 - Assignment 6.2 – Access Management - Spring and Thymeleaf security
                 10/15/2021 - Assignment 7.2 – RESTful Controllers - Add a new Maven dependency for springdoc-openapi-ui.
+                10/20/2021 - Assignment 8.2 – OpenLibrary API - Add a new dependency to your Maven project for com.jayway.jsonpath
 File Name: 	    pom.xml
 
 University:	    Bellevue University
@@ -70,6 +71,12 @@ Modified by J. Staley 2021
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.5.2</version>
+        </dependency>
+
+        <!-- Json path library -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
         </dependency>
 
         <!-- Spring devtools -->

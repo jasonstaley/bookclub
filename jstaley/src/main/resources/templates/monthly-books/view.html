@@ -4,6 +4,7 @@ Student:	    Jason Staley
 Date: 		    9/9/2021
 Assignment: 	2.2 - Controller Aspects and Navigation
 Updated:        9/14/2021 - 3.2 - Thymeleaf in Action - display the selected books
+                10/20/2021 - Assignment 8.2 – OpenLibrary API
 File Name: 	    view.html
 
 University:	    Bellevue University
@@ -51,11 +52,12 @@ Modified by J. Staley 2021
                         <p>
                             <strong>Description:</strong> <br /><span th:text="${book.getDescription()}"></span>
                         </p>
-                        <strong>Authors:</strong>
-                        <ul th:each="author : ${book.getAuthors()}">
-                            <li th:text="${author}"></li>
-                        </ul>
+                        <strong>Web Link:</strong>
+                        <p>
+                            <a href="#" target="_blank" th:href="${book.getInfoUrl()}" th:text="${book.getInfoUrl()}"></a>
+                        </p>
                     </div>
+
                 </div>
             </div>
             <br />

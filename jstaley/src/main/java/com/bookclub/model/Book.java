@@ -2,6 +2,7 @@
 Student:	    Jason Staley
 Date: 		    9/14/2021
 Assignment: 	3.2 - Thymeleaf in Action
+Updated:        10/20/2021 - Assignment 8.2 – OpenLibrary API - Update fields to: String isbn, String title, String description, String infoUrl, and int numOfPages
 File Name: 	    Book.java
 
 University:	    Bellevue University
@@ -22,17 +23,23 @@ public class Book
     private String isbn;
     private String title;
     private String description;
+    private String infoUrl;
     private int numOfPages;
-    private List<String> authors;
 
     public Book() {}
 
-    public Book(String isbn, String title, String description, int numOfPages, List<String> authors) {
+    public Book(String isbn, String title, String description, String infoUrl, int numOfPages) {
         this.isbn = isbn;
         this.title = title;
         this.description = description;
+        this.infoUrl = infoUrl;
         this.numOfPages = numOfPages;
-        this.authors = authors;
+    }
+
+    public Book(String isbn, String title, String infoUrl) {
+        this.isbn = isbn;
+        this.title = title;
+        this.infoUrl = infoUrl;
     }
 
     public void setIsbn(String isbn) {
@@ -67,16 +74,16 @@ public class Book
         return numOfPages;
     }
 
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
+    public void setInfoUrl(String infoUrl) {
+        this.infoUrl = infoUrl;
     }
 
-    public List<String> getAuthors() {
-        return authors;
+    public String getInfoUrl() {
+        return infoUrl;
     }
 
     @Override
     public String toString() {
-        return String.format("Book{isbn=%s, title=%s, description=%s, numOfPages=%s, authors=%s}", isbn, title, description, numOfPages, authors);
+        return String.format("Book{isbn=%s, title=%s, description=%s, infoUrl=%s, numOfPages=%s}", isbn, title, description, infoUrl, numOfPages);
     }
 }
