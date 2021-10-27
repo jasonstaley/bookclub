@@ -4,6 +4,7 @@ Student:	    Jason Staley
 Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
 Updated:        10/15/2021 - Assignment 7.2 – RESTful Controllers - to call the REST API from your REST controller
+                10/27/2021 - Assignment 9.2 – CRUD Operations
 File Name: 	    list.html
 
 University:	    Bellevue University
@@ -62,7 +63,7 @@ Modified by J. Staley 2021
         let tableString = `<table class="table"><tr><th>ISBN</th><th>Title</th><th>Functions</th></tr>`;
 
         for (let book of books) {
-            tableString += `<tr><td>${book.isbn}</td><td>${book.title}</td><td><a href="#">Edit</a> | <a href="#">Delete</a></td></tr>`;
+            tableString += `<tr><td>${book.isbn}</td><td>${book.title}</td><td><a href="/wishlist/${book.id}" th:href="@{/wishlist/${book.id}">Edit</a> | <a href="/wishlist/remove/${book.id}" th:href="@{/wishlist/remove/${book.id}">Delete</a></td></tr>`;
         }
 
         tableString += `</table>`

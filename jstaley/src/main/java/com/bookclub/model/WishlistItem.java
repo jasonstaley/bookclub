@@ -5,6 +5,7 @@ Assignment: 	4.2 - Forms and Data Validation
 Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - a new private property for id of type String with a decorator of @Id
                 -Add getter method for the new id property
                 -Update the overridden toString() method to include the id property
+                10/27/2021 - Assignment 9.2 – CRUD Operations
 File Name: 	    WishlistItem.java
 
 University:	    Bellevue University
@@ -36,11 +37,23 @@ public class WishlistItem
     @NotEmpty(message = "Title is a required field.")
     private String title;
 
+    private String username;
+
     public WishlistItem() {}
 
     public WishlistItem(String isbn, String title) {
         this.isbn = isbn;
         this.title = title;
+    }
+
+    public WishlistItem(String isbn, String title, String username) {
+        this.isbn = isbn;
+        this.title = title;
+        this.username = username;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {
@@ -63,8 +76,16 @@ public class WishlistItem
         return title;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     @Override
     public String toString() {
-        return String.format("WishlistItem{id=%s, isbn=%s, title=%s}", id, isbn, title);
+        return String.format("WishlistItem{id=%s, isbn=%s, title=%s, username=%s}", id, isbn, title, username);
     }
 }

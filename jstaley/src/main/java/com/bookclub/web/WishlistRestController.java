@@ -2,6 +2,9 @@
 Student:	    Jason Staley
 Date: 		    10/15/2021
 Assignment: 	Assignment 7.2 – RESTful Controllers
+Updated:        10/27/2021 - Assignment 9.2 – CRUD Operations - add a parameter of type Authentication
+                                            - Add a variable named username and bind the authentication.getName() function to it
+                                            - Update the call to the wishListDao.list() method by passing-in the user name.
 File Name: 	    SecurityConfig.java
 
 University:	    Bellevue University
@@ -18,6 +21,7 @@ import com.bookclub.model.WishlistItem;
 import com.bookclub.service.dao.WishlistDao;
 import com.bookclub.service.impl.MongoWishlistDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,8 +38,10 @@ public class WishlistRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<WishlistItem> showWishlist() {
-        return wishlistDao.list();
+    public List<WishlistItem> showWishlist(Authentication authentication) {
+        String username = authentication.getName();
+
+        return wishlistDao.list(username);
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
