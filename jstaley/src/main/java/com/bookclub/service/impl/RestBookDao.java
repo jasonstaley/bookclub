@@ -3,6 +3,7 @@ Student:	    Jason Staley
 Date: 		    9/14/2021
 Assignment: 	3.2 - Thymeleaf in Action
 Updated:        10/20/2021 - Assignment 8.2 – OpenLibrary API
+                11/2/2021 - Assignment 10.2 – Authorization in Action
 File Name: 	    MemBookDao.java
 
 University:	    Bellevue University
@@ -35,10 +36,13 @@ public class RestBookDao implements BookDao {
     public RestBookDao() {  }
 
     @Override
-    public List<Book> list() {
-        String isbnString = "ISBN:9780593099322,9780261102361,9780261102378,9780590302715,9780316769532";
+    public List<Book> list(String key) {
+        Object doc = getBooksDoc(key);
 
-        Object doc = getBooksDoc(isbnString);
+        //removed 11/2/2021 - 10.2 – Authorization in Action
+        //public List<Book> list() {
+        //String isbnString = "ISBN:9780593099322,9780261102361,9780261102378,9780590302715,9780316769532";
+        //Object doc = getBooksDoc(isbnString);
 
         List<Book> books = new ArrayList<Book>();
 

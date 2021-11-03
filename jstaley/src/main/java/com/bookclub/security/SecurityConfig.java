@@ -2,6 +2,7 @@
 Student:	    Jason Staley
 Date: 		    10/6/2021
 Assignment: 	Assignment 6.2 – Access Management
+Updated:        11/2/2021 - Assignment 10.2 – Authorization in Action
 File Name: 	    SecurityConfig.java
 
 University:	    Bellevue University
@@ -43,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+                .antMatchers("/monthly-books/list", "/monthly-books/new", "/monthly-books").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()

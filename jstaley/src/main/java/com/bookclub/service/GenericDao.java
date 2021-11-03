@@ -2,6 +2,7 @@
 Student:	    Jason Staley
 Date: 		    9/14/2021
 Assignment: 	3.2 - Thymeleaf in Action
+Updated:        11/2/2021 - 10.2 – Authorization in Action - add parameter to list() method
 File Name: 	    GenericDao.java
 
 University:	    Bellevue University
@@ -18,6 +19,6 @@ package com.bookclub.service;
 import java.util.List;
 
 public interface GenericDao<E, K> {
-    List<E> list(); // Return a list of objects of type E.
+    List<E> list(K key); // Return a list of objects of type E.
     E find(K key); // Return an object of type E by type K value.
 }

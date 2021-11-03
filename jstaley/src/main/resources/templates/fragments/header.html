@@ -6,6 +6,7 @@ Assignment: 	2.2 - Controller Aspects and Navigation
 Updated:        9/21/2021 - 4.2 - Forms and Data Validation - include a route for "Wishlist"
                 10/6/2021 - Assignment 6.2 – Access Management
                 10/15/2021 - Assignment 7.2 – RESTful Controllers
+                11/2/2021 - Assignment 10.2 – Authorization in Action
 File Name: 	    header.html
 
 University:	    Bellevue University
@@ -52,6 +53,11 @@ Modified by J. Staley 2021
                 <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                     <li class="nav-item">
                         <a href="/swagger-ui.html" class="nav-link" target="_blank">OpenAPI Specification</a>
+                    </li>
+
+                    <!-- Restrict the visibility of this link to only admin users. -->
+                    <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                        <a href="/monthly-books" class="nav-link" th:href="@{/monthly-books}">Monthly Books</a>
                     </li>
 
                     <li class="nav-item float-end">
