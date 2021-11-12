@@ -7,6 +7,7 @@ Updated:        9/28/2021 - Assignment 5.2 – Data Persistence with MongoDB - a
                 10/6/2021 - Assignment 6.2 – Access Management - Spring and Thymeleaf security
                 10/15/2021 - Assignment 7.2 – RESTful Controllers - Add a new Maven dependency for springdoc-openapi-ui.
                 10/20/2021 - Assignment 8.2 – OpenLibrary API - Add a new dependency to your Maven project for com.jayway.jsonpath
+                11/10/2012 - Assignment 11.2 – Unit Tests in Action - added junit dependency
 File Name: 	    pom.xml
 
 University:	    Bellevue University
@@ -44,6 +45,11 @@ Modified by J. Staley 2021
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Spring web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -91,6 +97,14 @@ Modified by J. Staley 2021
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
