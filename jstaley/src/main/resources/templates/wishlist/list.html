@@ -5,6 +5,7 @@ Date: 		    9/21/2021
 Assignment: 	4.2 - Forms and Data Validation
 Updated:        10/15/2021 - Assignment 7.2 – RESTful Controllers - to call the REST API from your REST controller
                 10/27/2021 - Assignment 9.2 – CRUD Operations
+                11/17/2021 - Assignment 12.2 – Cloud Deployment - Update the wishlist/list.html file’s API call from http://localhost:8080/api/wishlist to your Heroku deployment path.
 File Name: 	    list.html
 
 University:	    Bellevue University
@@ -73,7 +74,8 @@ Modified by J. Staley 2021
 
     const http = new HttpClient();
 
-    http.get('http://localhost:8090/api/wishlist').then(res => {
+    //http.get('http://localhost:8090/api/wishlist').then(res => {
+    http.get('https://staley-bookclub.herokuapp.com/api/wishlist').then(res => {
         console.log(res);
         document.getElementById("wishlist").innerHTML = buildTable(res);
     }).catch(e => {
